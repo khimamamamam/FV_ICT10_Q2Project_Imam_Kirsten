@@ -1,40 +1,242 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
     <title>Q2 Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-    body {
-        background-image: url("https://i.pinimg.com/736x/63/c9/22/63c922986024f0e0bfd90872d719fc76.jpg");
-        color: white;
-        font-family: 'Orbitron', sans-serif;
-        text-align: center;
-        padding-top: 50px;
+        body {
+            font-family: 'Orbitron', sans-serif;
+            color: #e6f5e9;
+            min-height: 100vh;
+            background: #102d24;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("https://i.pinimg.com/736x/63/c9/22/63c922986024f0e0bfd90872d719fc76.jpg");
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+
+        .logo {
+            font-size: 17px;
+            font-weight: 700;
+            color: #b7efc5;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+            justify-self: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: white;
+            text-shadow:
+                0 0 8px rgba(72, 187, 120, 0.6),
+                0 0 18px rgba(46, 139, 87, 0.8);
+        }
+
+        .header {
+            padding: 45px 40px;
+            margin-bottom: 25px;
+            background: rgba(18, 53, 36, 0.75);
+            border: 1px solid rgba(160, 230, 180, 0.2);
+            border-radius: 22px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .subtitle {
+            color: #8fbc8f;
+            font-size: 11px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            color: #e4f7e8;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: #c3dfca;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .title {
+            margin: 35px 0 18px;
+            color: #e4f1e7;
+            text-shadow:
+                0 0 8px rgba(72, 187, 120, 0.6),
+                0 0 18px rgba(46, 139, 87, 0.8);
+            font-size: 16px;
+            letter-spacing: 2px;
     }
 
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("https://i.pinimg.com/736x/63/c9/22/63c922986024f0e0bfd90872d719fc76.jpg");
-        background-size: cover;
-        background-position: center;
-        -webkit-filter: blur(5px);
-        filter: blur(5px);
-        z-index: -1;
-    }
-    
+        .card-format {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            min-height: 175px;
+            padding: 25px;
+            background: rgba(18, 53, 36, 0.75);
+            border: 1px solid rgba(160, 230, 180, 0.2);
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(183, 239, 197, 0.6);
+            box-shadow:
+                0 0 8px rgba(72, 187, 120, 0.7),
+                0 0 18px rgba(46, 139, 87, 0.6),
+                0 0 28px rgba(72, 187, 120, 0.4);
+        }
+
+        .card h3 {
+            color: #b7efc5;
+            font-size: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: #d1e9d8;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .quote {
+            margin-top: 25px;
+            padding: 30px;
+            text-align: center;
+            background: rgba(27, 73, 36, 0.8);
+            border: 1px solid rgba(160, 230, 180, 0.25);
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+        }
+
+        .quote h3 {
+            color: #b7efc5;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .quote p {
+            color: #e0f2e5;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+        }
     </style>
 </head>
+
 <body>
-    
+
+ <main class="container">
+        <section class="header">
+            <div class="subtitle">Q2 ICT PROJECT</div>
+
+            <h1>MEET THE CREATOR</h1>
+
+            <p>
+                Welcome to my personal science-inspired website!
+                This space introduces who I am, what interests me,
+                and the goals that motivate me to keep learning
+                and discovering new things.
+            </p>
+        </section>
+
+        <h2 class="title">GET TO KNOW ME</h2>
+
+        <section class="card-format">
+            <div class="card" id="about-me">
+                <h3>ABOUT ME</h3>
+                <p>
+                    Get to know the person behind this website.
+                    Learn a little about my personality,
+                    background, and what makes me who I am.
+                </p>
+            </div>
+
+            <div class="card" id="interests">
+                <h3>🔬 MY INTERESTS</h3>
+                <p>
+                    Discover my hobbies, favorite subjects,
+                    personal interests, and the things
+                    that spark my curiosity.
+                </p>
+            </div>
+
+            <div class="card" id="hobbies">
+                <h3>🚀 MY HOBBIES</h3>
+                <p>
+                    A glimpse into my future ambitions,
+                    personal dreams, and the things
+                    I hope to accomplish someday.
+                </p>
+            </div>
+
+            <div class="card" id="dreams-aspirations">
+                <h3>💡 MY DREAMS & ASPIRATIONS</h3>
+                <p>
+                    The skills I want to develop,
+                    knowledge I want to gain,
+                    and challenges I want to overcome.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="quote">
+            <h3>✦ A QUOTE OF MY CHOICE ✦</h3>
+
+            <p>
+                "Somewhere, something incredible
+                is waiting to be known."
+            </p>
+
+            <p style="font-size: 12px; margin-top: 12px;">
+                — Carl Sagan
+            </p>
+        </section>
+
+    </main>
+
     <script type="py" src="main.py"></script>
+
 </body>
-</html
+</html>
