@@ -63,7 +63,7 @@
             border: 1px solid rgba(160, 230, 180, 0.2);
             border-radius: 22px;
             backdrop-filter: blur(12px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            animation: glowPulse 3s ease-in-out infinite;
         }
 
         .header .subtitle {
@@ -118,9 +118,8 @@
             transform: translateY(-5px);
             border-color: rgba(183, 239, 197, 0.6);
             box-shadow:
-                0 0 8px rgba(72, 187, 120, 0.7),
-                0 0 18px rgba(46, 139, 87, 0.6),
-                0 0 28px rgba(72, 187, 120, 0.4);
+                0 0 10px rgba(144, 238, 160, 0.233),
+                0 0 20px rgba(120, 255, 160, 0.412);
         }
 
         .card h3 {
@@ -145,8 +144,22 @@
             border: 1px solid rgba(160, 230, 180, 0.25);
             border-radius: 18px;
             backdrop-filter: blur(12px);
+            animation: glowPulse 3s ease-in-out infinite;
         }
 
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow:
+                    0 0 10px rgba(144, 238, 160, 0.233),
+                    0 0 20px rgba(120, 255, 160, 0.412);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 10px rgba(144, 238, 160, 0.333),
+                    0 0 20px rgba(120, 255, 160, 0.385);
+            }
+        }
         .quote h3 {
             color: #b7efc5;
             font-size: 13px;
@@ -168,23 +181,21 @@
 
  <main class="container">
         <section class="header">
-            <div class="subtitle">Q2 ICT PROJECT</div>
+            <div class="subtitle"> ༘⋆₊ ⊹★🔭๋࣭ ⭑⋆｡˚Q2 ICT PROJECT༘⋆₊ ⊹★🔭๋࣭ ⭑⋆｡˚</div>
 
-            <h1>MEET THE CREATOR</h1>
+            <h1>MEET THE CREATOR🌱🧪</h1>
 
             <p>
-                Welcome to my personal science-inspired website!
-                This space introduces who I am, what interests me,
-                and the goals that motivate me to keep learning
-                and discovering new things.
+                🌱:•.🧪 Welcome to my science-club inspired website! 🌱:•.🧪 <br>
+                This space aims to introduce myself and the projects I have created all throughout 2nd Quarter ICT 10 involving HTML and Python.
             </p>
         </section>
 
-        <h2 class="title">GET TO KNOW ME</h2>
+        <h2 class="title">࣭⭑⋆｡˚GET TO KNOW ME⭑⋆｡˚</h2>
 
         <section class="card-format">
             <div class="card" id="about-me">
-                <h3>ABOUT ME</h3>
+                <h3>🧬 ABOUT ME</h3>
                 <p>
                     Get to know the person behind this website.
                     Learn a little about my personality,
@@ -202,7 +213,7 @@
             </div>
 
             <div class="card" id="hobbies">
-                <h3>🚀 MY HOBBIES</h3>
+                <h3>🦠 MY HOBBIES</h3>
                 <p>
                     A glimpse into my future ambitions,
                     personal dreams, and the things
@@ -211,7 +222,7 @@
             </div>
 
             <div class="card" id="dreams-aspirations">
-                <h3>💡 MY DREAMS & ASPIRATIONS</h3>
+                <h3>🧪 MY DREAMS & ASPIRATIONS</h3>
                 <p>
                     The skills I want to develop,
                     knowledge I want to gain,
@@ -225,12 +236,11 @@
             <h3>✦ A QUOTE OF MY CHOICE ✦</h3>
 
             <p>
-                "Somewhere, something incredible
-                is waiting to be known."
+                "Nothing in life is to be feared, it is only to be understood."
             </p>
 
             <p style="font-size: 12px; margin-top: 12px;">
-                — Carl Sagan
+                — Marie Curie
             </p>
         </section>
 
