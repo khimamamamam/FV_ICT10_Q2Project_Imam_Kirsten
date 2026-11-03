@@ -1,4 +1,3 @@
-
 from pyscript import document
 
 # GET TO KNOW ME
