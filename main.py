@@ -13,7 +13,7 @@ about_cards = [
 about_html = "" #container
 
 for title, description in about_cards: #looks for title and description in list of tuples
-    about_html += f'<div class="card"><h3>{title}</h3><p>{description}</p></div>' #styling about me cards when displayed on html
+    about_html += f'<div class="card"><h3>{title}</h3><p>{description}</p></div>' #combines and styles about me cards when displayed on html
 
 document.getElementById("about-cards").innerHTML = about_html #display descriptions under about me
 
@@ -29,6 +29,6 @@ projects = [
 project_html = "" #container
 
 for number, category, name, description, link in projects: #looks for name, category, name, description, and link in list of tuples
-    project_html += f'<div class="project-card"><div class="project-number">{number}</div><div class="project-type">{category}</div><h3>{name}</h3><p>{description}</p><a href="{link}">EXPLORE PROJECT ↗</a></div>' #styling project cards for when displayed on html
+    project_html += f'<div class="project-card"><div class="project-number">{number}</div><div class="project-type">{category}</div><h3>{name}</h3><p>{description}</p><a href="{link}">EXPLORE PROJECT ↗</a></div>' #combines and styles project cards for when displayed on html
 
 document.getElementById("project-cards").innerHTML = project_html #display projects
